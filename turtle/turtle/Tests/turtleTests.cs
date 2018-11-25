@@ -28,5 +28,17 @@ namespace turtle.Tests
 
             surfaceMockObj.Verify((surface) => surface.DrawAt(expectedLocation));
         }
+
+        [Test]
+        public void VerifyConsoleSurfaceCanWriteAtPointLocation()
+        {
+            var lineWriterMockObj = new Mock<ILineWriter>();
+            ISurface surface = new ConsoleSurface(lineWriterMockObj.Object);
+
+			var expectedLocation = new Point(0,0);
+            surface.DrawAt(expectedLocation);
+
+            lineWriterMockObj.Verify((lw) => lw.Put("."));
+		}
     }
 }

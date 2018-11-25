@@ -6,7 +6,10 @@ namespace turtle
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Turtle turtle = new Turtle();
+            ILineWriter lw = new LineWriter();
+            ISurface surface = new ConsoleSurface(lw);
+            turtle.Draw(surface);
         }
     }
 }
