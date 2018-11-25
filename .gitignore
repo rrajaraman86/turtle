@@ -1,0 +1,6 @@
+turtle/turtle/bin/
+turtle/turtle/obj/
+turtle/packages/
+.vs/
+.DS_Store
+*.userprefs
