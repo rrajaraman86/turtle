@@ -3,15 +3,15 @@ namespace turtle
 {
     public class ConsoleSurface: ISurface
     {
-        ILineWriter lw;
-        public ConsoleSurface(ILineWriter lineWriter)
+        public ConsoleSurface()
         {
-            this.lw = lineWriter;
+            
         }
 
-        public void DrawAt(Point point)
+		public void DrawAt(Point point, char c)
         {
-            lw.Put(".");
+            Console.SetCursorPosition(point.x, point.y);
+            Console.Write(c);
         }
     }
 }

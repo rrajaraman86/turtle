@@ -6,10 +6,16 @@ namespace turtle
     {
         public static void Main(string[] args)
         {
-            Turtle turtle = new Turtle();
-            ILineWriter lw = new LineWriter();
-            ISurface surface = new ConsoleSurface(lw);
-            turtle.Draw(surface);
-        }
+            ISurface surface = new ConsoleSurface();
+            Turtle turtle = new Turtle(surface);
+            turtle.position = new Point(2, 3);
+
+            Camera camera = new Camera();
+            camera.MovementsPerSecond = 3;
+
+            int unitsOfMovement = 30;
+
+            camera.Record(turtle, unitsOfMovement);
+		}
     }
 }
